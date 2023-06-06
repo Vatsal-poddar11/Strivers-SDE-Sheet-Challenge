@@ -1,0 +1,27 @@
+void setZeros(vector<vector<int>> &matrix)
+{	
+	for(int i = 0; i < matrix.size(); i++){
+		for(int j = 0; j < matrix[0].size(); j++){
+			if(matrix[i][j] == 0){
+				for(int k = 0; k < matrix[0].size(); k++){
+            if (matrix[i][k] != 0) {
+                matrix[i][k] = INT_MIN + 1;
+            }
+         }
+				for(int t = 0; t < matrix.size(); t++){
+            if (matrix[t][j] != 0) {
+                matrix[t][j] = INT_MIN + 1;
+            }
+         }
+			}
+		}
+	}	
+
+	for(int i = 0; i < matrix.size(); i++){
+		for(int j = 0; j < matrix[0].size(); j++){
+			if(matrix[i][j] == INT_MIN + 1){
+				matrix[i][j] = 0;
+			}
+		}
+	}	
+}
