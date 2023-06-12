@@ -1,0 +1,22 @@
+#include <bits/stdc++.h>
+vector<int> solve(int row){
+
+  long long ans = 1;
+  vector<int> rowAns;
+  rowAns.push_back(1);
+
+  for(int col = 1; col < row; col++){
+    ans = (ans * (row-col)) / col;
+    rowAns.push_back(ans);
+  }
+  return rowAns;
+}
+
+vector<vector<long long int>> printPascal(int n) {
+
+  vector<vector<int>> ans;
+  for(int i = 1; i <= n; i++){
+    ans.push_back(solve(i));
+  }
+  return ans;
+}
