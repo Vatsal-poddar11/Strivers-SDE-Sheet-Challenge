@@ -1,8 +1,9 @@
 #include <bits/stdc++.h>
-vector<int> solve(int row){
+
+vector<long long int> solve(int row){
 
   long long ans = 1;
-  vector<int> rowAns;
+  vector<long long int> rowAns;
   rowAns.push_back(1);
 
   for(int col = 1; col < row; col++){
@@ -14,7 +15,7 @@ vector<int> solve(int row){
 
 vector<vector<long long int>> printPascal(int n) {
 
-  vector<vector<int>> ans;
+  vector<vector<long long int>> ans;
   for(int i = 1; i <= n; i++){
     ans.push_back(solve(i));
   }
