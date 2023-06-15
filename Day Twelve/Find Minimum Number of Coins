@@ -1,0 +1,18 @@
+#include <bits/stdc++.h> 
+int findMinimumCoins(int amount) 
+{
+    vector<int> coins{1000,500,100,50,20,10,5,2,1};
+    int total = 0;
+
+    for(int i = 0; i < coins.size(); i++){
+        if(amount >= coins[i]){
+            int numCoins = amount / coins[i];
+            total += numCoins;
+            amount = amount - (coins[i] * numCoins);
+        }
+        if(amount == 0){
+            break;
+        }
+    }
+    return total;
+}
