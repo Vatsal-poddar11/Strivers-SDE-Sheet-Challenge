@@ -1,0 +1,36 @@
+#include <bits/stdc++.h>
+
+vector<vector<int>> pairSum(vector<int> &arr, int s){
+   sort(arr.begin(), arr.end());
+   int start = 0;
+   int end = arr.size() - 1;
+   vector<vector<int>> ans;
+
+   while(start < arr.size()){
+      if(start == end){
+         end = arr.size()-1;
+         start++;
+      }
+      if(arr[start] + arr[end] == s){
+         vector<int> temp;
+         temp.push_back(arr[start]);
+         temp.push_back(arr[end]);
+         ans.push_back(temp);
+         if(start == end){
+            end = arr.size()-1;
+            start++;
+         }
+         end--;
+      }
+      else{
+         if(start == end){
+            end = arr.size()-1;
+            start++;
+         }
+         else{
+            end--;
+         }
+      }
+   }
+   return ans;
+}
