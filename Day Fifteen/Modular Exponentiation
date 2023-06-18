@@ -1,0 +1,13 @@
+int modularExponentiation(int x, int n, int m) {
+
+	long long ans = 1;
+	long long val = x;
+	while(n){
+		if(n&1){
+			ans = (val * ans) % m;
+		}
+		val = (val * val) % m;
+		n = n >> 1;
+	}
+	return (int)ans;
+}
